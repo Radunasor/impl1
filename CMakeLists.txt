@@ -11,7 +11,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES CMAKE_CXX_STANDARD 11)
 target_include_directories(${PROJECT_NAME}
     PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    PUBLIC
+    PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_CURRENT_BINARY_DIR}
 )
