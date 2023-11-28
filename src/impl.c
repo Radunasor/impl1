@@ -4,9 +4,30 @@
 
 #include "impl.h"
 
+static void initialize()
+{
+    if (initialized)
+        return;
+
+    initialized = true;
+}
+
+static void destroy()
+{
+    if (!initialized)
+        return;
+
+    initialized = false;
+}
+
+static bool is_initialized()
+{
+    return initialized;
+}
+
 static void print_impl()
 {
-    printf("fisrt implementation! \n");
+    printf("second implementation! \n");
 }
 
 Iimpl *get_impl_instance()
@@ -20,6 +41,9 @@ Iimpl *get_impl_instance()
 
     memset(impl, 0, sizeof(Iimpl));
 
+    impl->initialize = initialize;
+    impl->destroy = destroy;
+    impl->is_initialized = is_initialized;
     impl->print_impl = print_impl;
 
     return impl;
