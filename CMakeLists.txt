@@ -16,6 +16,8 @@ target_include_directories(${PROJECT_NAME}
     ${CMAKE_CURRENT_BINARY_DIR}
 )
 
+configure_file(include/${PROJECT_NAME}_config.h.in ${PROJECT_NAME}_config.h)
+
 FetchContent_Declare(
     interfaces
     GIT_REPOSITORY "https://github.com/Radunasor/interfaces.git"
