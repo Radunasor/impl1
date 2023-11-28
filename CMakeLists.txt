@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.21.1)
 
-project(impl1 LANGUAGES C CXX VERSION 4.5.6)
+project(impl LANGUAGES C CXX VERSION 4.5.6)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 11)
 
@@ -22,4 +22,4 @@ FetchContent_Declare(
     GIT_TAG main
 )
 FetchContent_MakeAvailable(interfaces)
-target_link_libraries(${PROJECT_NAME} PUBLIC interfaces)
+target_link_libraries(${PROJECT_NAME} PRIVATE interfaces)
