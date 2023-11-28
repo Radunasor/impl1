@@ -30,7 +30,7 @@ static void print_impl()
     printf("second implementation! \n");
 }
 
-Iimpl *get_impl_instance()
+const Iimpl *get_impl_instance()
 {
     static Iimpl *impl = NULL;
 
